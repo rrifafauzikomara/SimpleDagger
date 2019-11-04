@@ -1,6 +1,7 @@
 package com.rifafauzi.dagger.ui.detail
 
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,22 +12,33 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
+import com.rifafauzi.dagger.MyApplication
 
 import com.rifafauzi.dagger.R
 import com.rifafauzi.dagger.ui.registration.RegistrationActivity
 import com.rifafauzi.dagger.ui.registration.RegistrationViewModel
+import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass.
  */
 class EnterDetailFragment : Fragment() {
 
-    private lateinit var registrationViewModel: RegistrationViewModel
-    private lateinit var enterDetailViewModel: EnterDetailViewModel
+    @Inject
+    lateinit var registrationViewModel: RegistrationViewModel
+
+    @Inject
+    lateinit var enterDetailViewModel: EnterDetailViewModel
 
     private lateinit var errorTextView: TextView
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (activity as RegistrationActivity).registrationComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,9 +47,7 @@ class EnterDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_enter_detail, container, false)
-        registrationViewModel = (activity as RegistrationActivity).registrationViewModel
 
-        enterDetailViewModel = EnterDetailViewModel()
         enterDetailViewModel.enterDetailState.observe(this,
             Observer<EnterDetailsViewState> { state ->
                 when (state) {

@@ -2,6 +2,7 @@ package com.rifafauzi.dagger.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import javax.inject.Inject
 
 /**
  * Created by rrifafauzikomara on 2019-11-01.
@@ -9,7 +10,7 @@ import androidx.lifecycle.MutableLiveData
 
 private const val MAX_LENGTH = 5
 
-class EnterDetailViewModel {
+class EnterDetailViewModel @Inject constructor() {
     private val _enterDetailState = MutableLiveData<EnterDetailsViewState>()
     val enterDetailState: LiveData<EnterDetailsViewState>
     get() = _enterDetailState

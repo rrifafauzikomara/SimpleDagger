@@ -1,12 +1,14 @@
 package com.rifafauzi.dagger.ui.registration
 
+import com.rifafauzi.dagger.di.ActivityScope
 import com.rifafauzi.dagger.user.UserManager
 import javax.inject.Inject
 
 /**
  * Created by rrifafauzikomara on 2019-11-01.
  */
- 
+
+@ActivityScope
 class RegistrationViewModel @Inject constructor(private val userManager: UserManager) {
 
     private var username: String? = null

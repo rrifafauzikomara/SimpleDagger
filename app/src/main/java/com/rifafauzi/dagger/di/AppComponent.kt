@@ -2,7 +2,7 @@ package com.rifafauzi.dagger.di
 
 import android.content.Context
 import com.rifafauzi.dagger.ui.main.MainActivity
-import com.rifafauzi.dagger.ui.registration.RegistrationActivity
+import com.rifafauzi.dagger.ui.registration.RegistrationComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -12,7 +12,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = [StorageModule::class])
+@Component(modules = [StorageModule::class, AppSubcomponents::class])
 interface AppComponent {
 
     @Component.Factory
@@ -20,6 +20,7 @@ interface AppComponent {
         fun create(@BindsInstance context: Context): AppComponent
     }
 
-    fun inject(activity: RegistrationActivity)
+    fun registrationComponent(): RegistrationComponent.Factory
+
     fun inject(activity: MainActivity)
 }
