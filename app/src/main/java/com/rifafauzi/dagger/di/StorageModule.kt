@@ -1,17 +1,18 @@
 package com.rifafauzi.dagger.di
 
+import android.content.Context
 import com.rifafauzi.dagger.storage.SharedPreferencesStorage
 import com.rifafauzi.dagger.storage.Storage
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 /**
  * Created by rrifafauzikomara on 2019-11-04.
  */
 
 @Module
-abstract class StorageModule {
+class StorageModule {
 
-    @Binds
-    abstract fun provideStorage(storage: SharedPreferencesStorage) : Storage
+    @Provides
+    fun provideStorage(context: Context) : Storage = SharedPreferencesStorage(context)
 }

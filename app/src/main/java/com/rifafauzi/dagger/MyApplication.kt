@@ -11,6 +11,10 @@ import com.rifafauzi.dagger.di.DaggerAppComponent
 open class MyApplication : Application() {
 
     val appComponent: AppComponent by lazy {
-        DaggerAppComponent.factory().create(applicationContext)
+        initializeComponent()
+    }
+
+    open fun initializeComponent(): AppComponent {
+        return DaggerAppComponent.factory().create(applicationContext)
     }
 }
