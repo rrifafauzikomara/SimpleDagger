@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.registration.terms
+package com.rifafauzi.dagger.ui.terms
 
 
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 
 import com.rifafauzi.dagger.R
-import com.rifafauzi.dagger.registration.RegistrationActivity
-import com.rifafauzi.dagger.registration.RegistrationViewModel
+import com.rifafauzi.dagger.ui.registration.RegistrationActivity
+import com.rifafauzi.dagger.ui.registration.RegistrationViewModel
 
 /**
  * A simple [Fragment] subclass.

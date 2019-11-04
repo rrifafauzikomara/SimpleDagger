@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.registration.detail
+package com.rifafauzi.dagger.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

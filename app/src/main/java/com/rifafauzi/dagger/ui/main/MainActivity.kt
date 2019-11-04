@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.main
+package com.rifafauzi.dagger.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +7,9 @@ import android.widget.Button
 import android.widget.TextView
 import com.rifafauzi.dagger.MyApplication
 import com.rifafauzi.dagger.R
-import com.rifafauzi.dagger.login.LoginActivity
-import com.rifafauzi.dagger.registration.RegistrationActivity
-import com.rifafauzi.dagger.setting.SettingsActivity
+import com.rifafauzi.dagger.ui.login.LoginActivity
+import com.rifafauzi.dagger.ui.registration.RegistrationActivity
+import com.rifafauzi.dagger.ui.setting.SettingsActivity
 
 class MainActivity : AppCompatActivity() {
 

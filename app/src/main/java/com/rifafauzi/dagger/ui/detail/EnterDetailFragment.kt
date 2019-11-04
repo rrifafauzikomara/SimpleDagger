@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.registration.detail
+package com.rifafauzi.dagger.ui.detail
 
 
 import android.os.Bundle
@@ -13,8 +13,8 @@ import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 
 import com.rifafauzi.dagger.R
-import com.rifafauzi.dagger.registration.RegistrationActivity
-import com.rifafauzi.dagger.registration.RegistrationViewModel
+import com.rifafauzi.dagger.ui.registration.RegistrationActivity
+import com.rifafauzi.dagger.ui.registration.RegistrationViewModel
 
 /**
  * A simple [Fragment] subclass.

@@ -1,13 +1,13 @@
-package com.rifafauzi.dagger.registration
+package com.rifafauzi.dagger.ui.registration
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.rifafauzi.dagger.MyApplication
 import com.rifafauzi.dagger.R
-import com.rifafauzi.dagger.main.MainActivity
-import com.rifafauzi.dagger.registration.detail.EnterDetailFragment
-import com.rifafauzi.dagger.registration.terms.TermsAndConditionsFragment
+import com.rifafauzi.dagger.ui.main.MainActivity
+import com.rifafauzi.dagger.ui.detail.EnterDetailFragment
+import com.rifafauzi.dagger.ui.terms.TermsAndConditionsFragment
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -17,7 +17,8 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        registrationViewModel = RegistrationViewModel((application as MyApplication).userManager)
+        registrationViewModel =
+            RegistrationViewModel((application as MyApplication).userManager)
         supportFragmentManager.beginTransaction().add(R.id.fragment_holder, EnterDetailFragment()).commit()
     }
 

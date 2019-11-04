@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".setting.SettingsActivity"></activity>
-        <activity android:name=".registration.RegistrationActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".main.MainActivity">
+        <activity android:name="com.rifafauzi.dagger.ui.setting.SettingsActivity"></activity>
+        <activity android:name=".ui.registration.RegistrationActivity" />
+        <activity android:name="com.rifafauzi.dagger.ui.login.LoginActivity" />
+        <activity android:name="com.rifafauzi.dagger.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.login
+package com.rifafauzi.dagger.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

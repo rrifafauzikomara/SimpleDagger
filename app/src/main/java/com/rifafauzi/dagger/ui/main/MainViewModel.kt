@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.main
+package com.rifafauzi.dagger.ui.main
 
 import com.rifafauzi.dagger.user.UserDataRepository
 

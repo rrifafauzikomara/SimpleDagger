@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.login
+package com.rifafauzi.dagger.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,8 +11,8 @@ import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import com.rifafauzi.dagger.MyApplication
 import com.rifafauzi.dagger.R
-import com.rifafauzi.dagger.main.MainActivity
-import com.rifafauzi.dagger.registration.RegistrationActivity
+import com.rifafauzi.dagger.ui.main.MainActivity
+import com.rifafauzi.dagger.ui.registration.RegistrationActivity
 
 class LoginActivity : AppCompatActivity() {
 

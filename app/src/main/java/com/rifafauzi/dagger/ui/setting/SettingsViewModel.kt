@@ -1,4 +1,4 @@
-package com.rifafauzi.dagger.setting
+package com.rifafauzi.dagger.ui.setting
 
 import com.rifafauzi.dagger.user.UserDataRepository
 import com.rifafauzi.dagger.user.UserManager
