@@ -12,24 +12,31 @@ import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
 
+    lateinit var registrationComponent: RegistrationComponent
+
     @Inject
     lateinit var registrationViewModel: RegistrationViewModel
 
-    lateinit var registrationComponent: RegistrationComponent
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        registrationComponent = (application as MyApplication).appComponent.registrationComponent().create()
+        registrationComponent = (application as MyApplication).appComponent
+            .registrationComponent().create()
+
         registrationComponent.inject(this)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        supportFragmentManager.beginTransaction().add(R.id.fragment_holder, EnterDetailFragment()).commit()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_holder, EnterDetailFragment())
+            .commit()
     }
 
     fun onDetailEntered() {
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_holder, TermsAndConditionsFragment()).commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_holder, TermsAndConditionsFragment())
+            .addToBackStack(TermsAndConditionsFragment::class.java.simpleName)
+            .commit()
     }
 
     fun onTermsAndConditionsAccepted() {

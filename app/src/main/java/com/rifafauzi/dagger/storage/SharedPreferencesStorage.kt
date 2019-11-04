@@ -18,7 +18,7 @@ class SharedPreferencesStorage @Inject constructor(context: Context) : Storage {
         }
     }
 
-    override fun getString(key: String): String = sharedPreferences.getString(key, "")!!
-
-
+    override fun getString(key: String): String {
+        return sharedPreferences.getString(key, "")!!
+    }
 }

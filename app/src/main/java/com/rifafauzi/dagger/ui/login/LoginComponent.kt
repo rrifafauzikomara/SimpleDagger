@@ -11,11 +11,10 @@ import dagger.Subcomponent
 @Subcomponent
 interface LoginComponent {
 
-    @Subcomponent
+    @Subcomponent.Factory
     interface Factory {
         fun create(): LoginComponent
     }
 
     fun inject(activity: LoginActivity)
-
 }

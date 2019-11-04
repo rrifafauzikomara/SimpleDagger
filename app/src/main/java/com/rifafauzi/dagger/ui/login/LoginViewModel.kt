@@ -8,11 +8,12 @@ import javax.inject.Inject
 /**
  * Created by rrifafauzikomara on 2019-11-01.
  */
- 
+
 class LoginViewModel @Inject constructor(private val userManager: UserManager) {
+
     private val _loginState = MutableLiveData<LoginViewState>()
     val loginState: LiveData<LoginViewState>
-    get() = _loginState
+        get() = _loginState
 
     fun login(username: String, password: String) {
         if (userManager.loginUser(username, password)) {

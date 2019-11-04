@@ -11,6 +11,7 @@ import javax.inject.Inject
 private const val MAX_LENGTH = 5
 
 class EnterDetailViewModel @Inject constructor() {
+
     private val _enterDetailState = MutableLiveData<EnterDetailsViewState>()
     val enterDetailState: LiveData<EnterDetailsViewState>
     get() = _enterDetailState

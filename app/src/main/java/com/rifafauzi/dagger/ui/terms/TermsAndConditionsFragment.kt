@@ -26,6 +26,7 @@ class TermsAndConditionsFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
+        // Grabs the registrationComponent from the Activity and injects this Fragment
         (activity as RegistrationActivity).registrationComponent.inject(this)
     }
 
@@ -34,15 +35,13 @@ class TermsAndConditionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_terms_and_conditions, container, false)
 
         view.findViewById<Button>(R.id.btnRegister).setOnClickListener {
             registrationViewModel.acceptTCs()
             (activity as RegistrationActivity).onTermsAndConditionsAccepted()
         }
+
         return view
     }
-
-
 }

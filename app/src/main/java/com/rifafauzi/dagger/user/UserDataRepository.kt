@@ -6,16 +6,14 @@ import kotlin.random.Random
 /**
  * Created by rrifafauzikomara on 2019-11-01.
  */
- 
+
+@LoggedUserScope
 class UserDataRepository @Inject constructor(private val userManager: UserManager) {
+
     val username: String
     get() = userManager.username
 
     var unReadNotification: Int
-
-    private fun randomInt(): Int {
-        return Random.nextInt(until = 100)
-    }
 
     init {
         unReadNotification = randomInt()
@@ -23,5 +21,9 @@ class UserDataRepository @Inject constructor(private val userManager: UserManage
 
     fun refreshUnreadNotifications() {
         unReadNotification = randomInt()
+    }
+
+    private fun randomInt(): Int {
+        return Random.nextInt(until = 100)
     }
 }

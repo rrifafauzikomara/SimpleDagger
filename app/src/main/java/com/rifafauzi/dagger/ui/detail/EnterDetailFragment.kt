@@ -12,7 +12,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
-import com.rifafauzi.dagger.MyApplication
 
 import com.rifafauzi.dagger.R
 import com.rifafauzi.dagger.ui.registration.RegistrationActivity
@@ -28,7 +27,7 @@ class EnterDetailFragment : Fragment() {
     lateinit var registrationViewModel: RegistrationViewModel
 
     @Inject
-    lateinit var enterDetailViewModel: EnterDetailViewModel
+    lateinit var enterDetailsViewModel: EnterDetailViewModel
 
     private lateinit var errorTextView: TextView
     private lateinit var usernameEditText: EditText
@@ -37,6 +36,7 @@ class EnterDetailFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
+        // Grabs the registrationComponent from the Activity and injects this Fragment
         (activity as RegistrationActivity).registrationComponent.inject(this)
     }
 
@@ -45,10 +45,9 @@ class EnterDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_enter_detail, container, false)
 
-        enterDetailViewModel.enterDetailState.observe(this,
+        enterDetailsViewModel.enterDetailState.observe(this,
             Observer<EnterDetailsViewState> { state ->
                 when (state) {
                     is EnterDetailsSuccess -> {
@@ -65,11 +64,12 @@ class EnterDetailFragment : Fragment() {
                     }
                 }
             })
-        initView(view)
+
+        setupViews(view)
         return view
     }
 
-    private fun initView(view: View) {
+    private fun setupViews(view: View) {
         errorTextView = view.findViewById(R.id.tvError)
 
         usernameEditText = view.findViewById(R.id.etUsername)
@@ -81,10 +81,9 @@ class EnterDetailFragment : Fragment() {
         view.findViewById<Button>(R.id.btnNext).setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
-            enterDetailViewModel.validateInput(username, password)
+            enterDetailsViewModel.validateInput(username, password)
         }
     }
-
 }
 
 sealed class EnterDetailsViewState

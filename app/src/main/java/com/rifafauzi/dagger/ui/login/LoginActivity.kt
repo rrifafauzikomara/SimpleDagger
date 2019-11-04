@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
     @Inject
     lateinit var loginViewModel: LoginViewModel
+
     private lateinit var errorTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +40,10 @@ class LoginActivity : AppCompatActivity() {
         })
 
         errorTextView = findViewById(R.id.tvError)
-        initView()
+        setupViews()
     }
 
-    private fun initView() {
+    private fun setupViews() {
         val usernameEditText = findViewById<EditText>(R.id.etUsername)
         usernameEditText.isEnabled = false
         usernameEditText.setText(loginViewModel.getUsername())

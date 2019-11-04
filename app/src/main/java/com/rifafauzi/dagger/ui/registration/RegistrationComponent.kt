@@ -15,10 +15,10 @@ interface RegistrationComponent {
 
     @Subcomponent.Factory
     interface Factory {
-        fun create() : RegistrationComponent
+        fun create(): RegistrationComponent
     }
 
     fun inject(activity: RegistrationActivity)
-    fun inject(fragment: TermsAndConditionsFragment)
     fun inject(fragment: EnterDetailFragment)
+    fun inject(fragment: TermsAndConditionsFragment)
 }
