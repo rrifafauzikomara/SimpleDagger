@@ -2,6 +2,7 @@ package com.rifafauzi.dagger.user
 
 import com.rifafauzi.dagger.storage.Storage
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Created by rrifafauzikomara on 2019-11-01.
@@ -9,7 +10,8 @@ import javax.inject.Inject
 
 private const val REGISTERED_USER = "registered_user"
 private const val PASSWORD_SUFFIX = "password"
- 
+
+@Singleton
 class UserManager @Inject constructor(private val storage: Storage) {
 
     var userDataRepository: UserDataRepository? = null
