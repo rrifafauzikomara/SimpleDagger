@@ -1,12 +1,13 @@
 package com.rifafauzi.dagger.ui.registration
 
 import com.rifafauzi.dagger.user.UserManager
+import javax.inject.Inject
 
 /**
  * Created by rrifafauzikomara on 2019-11-01.
  */
  
-class RegistrationViewModel(private val userManager: UserManager) {
+class RegistrationViewModel @Inject constructor(private val userManager: UserManager) {
 
     private var username: String? = null
     private var password: String? = null

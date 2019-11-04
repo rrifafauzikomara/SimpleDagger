@@ -1,6 +1,7 @@
 package com.rifafauzi.dagger.user
 
 import com.rifafauzi.dagger.storage.Storage
+import javax.inject.Inject
 
 /**
  * Created by rrifafauzikomara on 2019-11-01.
@@ -9,7 +10,7 @@ import com.rifafauzi.dagger.storage.Storage
 private const val REGISTERED_USER = "registered_user"
 private const val PASSWORD_SUFFIX = "password"
  
-class UserManager(private val storage: Storage) {
+class UserManager @Inject constructor(private val storage: Storage) {
 
     var userDataRepository: UserDataRepository? = null
     val username: String

@@ -1,12 +1,13 @@
 package com.rifafauzi.dagger.storage
 
 import android.content.Context
+import javax.inject.Inject
 
 /**
  * Created by rrifafauzikomara on 2019-11-01.
  */
 
-class SharedPreferencesStorage(context: Context) : Storage {
+class SharedPreferencesStorage @Inject constructor(context: Context) : Storage {
 
     private val sharedPreferences = context.getSharedPreferences("Dagger", Context.MODE_PRIVATE)
 
